@@ -1,0 +1,5 @@
+## Interface: 11200
+## Title: LumpaMail
+## Notes: Sends all items to chosen characters
+## Author: Lumpa
+LumpaMail.lua
