@@ -80,6 +80,15 @@ local ProfessionKeywords = {
     "fishing",
 }
 
+local function GetItemIDFromLink(link)
+    if not link then return nil end
+    local id = string.match(link, "item:(%d+)")
+    if id then
+        return tonumber(id)
+    end
+    return nil
+end
+
 -- =========================
 -- Frame & messaging
 -- =========================
@@ -108,7 +117,8 @@ local function ScanCategory(category)
         for s = 1, GetContainerNumSlots(b) do
             local link = GetContainerItemLink(b, s)
             if link then
-                local itemID = tonumber(string.match(link, "item:(%d+)"))
+                -- local itemID = tonumber(string.match(link, "item:(%d+)"))
+                local itemID = GetItemIDFromLink(link)
 
                 -- Special handling for Greens category
                 if category == "Greens" then
@@ -121,6 +131,7 @@ local function ScanCategory(category)
                         if left then
                             local text = left:GetText()
                             if text then
+                                
                                 if string.find(text, "Binds when equipped") then
                                     isBoE = true
                                 end
@@ -130,6 +141,17 @@ local function ScanCategory(category)
                                 if string.find(string.lower(text), "already known") then
                                     isKnown = true
                                 end
+
+                                -- if text:find("Binds when equipped") then
+                                --     isBoE = true
+                                -- end
+                                -- if text:find("|cff1eff00") then
+                                --     isGreen = true
+                                -- end
+                                -- if text:lower():find("already known") then
+                                --     isKnown = true
+                                -- end
+
                             end
                         end
                     end
@@ -151,8 +173,8 @@ local function ScanCategory(category)
                         if left then
                             local text = left:GetText()
                             if text then
-                                local lower = string.lower(text)
 
+                                local lower = string.lower(text)
                                 -- check if it's a recipe/pattern
                                 if string.find(lower, "teaches you") then
                                     teachesYou = true
@@ -167,6 +189,20 @@ local function ScanCategory(category)
                                         end
                                     end
                                 end
+
+                                -- local lower = text:lower()
+                                -- if lower:find("teaches you") then
+                                --     teachesYou = true
+                                -- end
+                                -- if lower:find("requires") then
+                                --     for _, prof in ipairs(ProfessionKeywords) do
+                                --         if lower:find(prof) then
+                                --             requiresProfession = true
+                                --             break
+                                --         end
+                                --     end
+                                -- end
+
                             end
                         end
                     end
@@ -333,7 +369,8 @@ SlashCmdList["LISTBAGS"] = function()
         for s=1,numSlots do
             local link = GetContainerItemLink(b,s)
             if link then
-                local itemID = tonumber(string.match(link,"item:(%d+)"))
+                -- local itemID = tonumber(string.match(link,"item:(%d+)"))
+                local itemID = GetItemIDFromLink(link)
                 local texture, count = GetContainerItemInfo(b,s)
                 count = count or 1
                 DEFAULT_CHAT_FRAME:AddMessage(
