@@ -11,23 +11,20 @@ local Targets = {
     Cooking = "Lcook",
     Tailoring = "Lcloth",
     Engineering = "Lengi",
-    Greens = "Phinans",
     Maxprof = "Dairycow",
     AH = "Phinans",
+    AH_extra = "Phinans",
 }
 
 -- =========================
 -- Item IDs per category
 -- =========================
 local ItemLists = {
-    -- Bank = {
-    --     [7070]=true,[4481]=true,[4479]=true,[4480]=true,[7069]=true,[2738]=true,[2725]=true,[2748]=true,[2744]=true,[2740]=true,[2742]=true,[2751]=true,[2732]=true,[2734]=true,[2728]=true,[2735]=true,[2750]=true,[2749]=true,[2730]=true,[8483]=true,[22528]=true,[18944]=true,[7068]=true,[18945]=true,[7078]=true,[22527]=true,[13446]=true,[19262]=true,[22529]=true,[11018]=true,[7077]=true,[22526]=true,[3928]=true,[11404]=true,[6310]=true,[3404]=true,[5117]=true,[7080]=true,[7079]=true,[19441]=true,[22525]=true,[12808]=true,[12811]=true,[18335]=true,[26039]=true,[8545]=true,[14529]=true,[8544]=true,[14530]=true,[20520]=true,[10513]=true,[10562]=true,[19933]=true,[7082]=true,[7081]=true,[7067]=true,[20404]=true,[7075]=true,[11185]=true,[11186]=true,[11184]=true,[15997]=true,[8151]=true,[20408]=true,[20406]=true,[20407]=true,[12360]=true,[17413]=true,[13489]=true,[12704]=true,[12697]=true,[11737]=true,[6149]=true,[15743]=true,[12683]=true,[18600]=true,[15775]=true,[14466]=true,[12804]=true,[19264]=true,[8390]=true,[13490]=true,[15749]=true,[14498]=true,[12695]=true,[19233]=true,[19234]=true,[17683]=true,[12691]=true,[12838]=true,[12713]=true,[15757]=true,[12803]=true,[17414]=true,[19265]=true,[14478]=true,[3827]=true,[16051]=true,[16247]=true,[2745]=true,[7072]=true,[4096]=true,[12202]=true,[4611]=true,[5785]=true,[1710]=true,[9719]=true,[7191]=true,[9260]=true,[4589]=true,[9259]=true,[15047]=true,
-    -- },
     Bank = {
-        [14256]=true,[26039]=true,[19933]=true,[22525]=true,[7078]=true,[7077]=true,[18945]=true,[22528]=true,[22527]=true,[7068]=true,
+        [14256]=true,[26039]=true,[19933]=true,[22525]=true,[7078]=true,[7077]=true,[18945]=true,[22528]=true,[22527]=true,[7068]=true,[7067]=true,[2740]=true,[2745]=true,[7191]=true,[2728]=true,[2744]=true,[2750]=true,[2732]=true,[2742]=true,[2738]=true,[2735]=true,[2751]=true,[2748]=true,[2730]=true,[2734]=true,[2749]=true,[2725]=true,
     },
     Leather = {
-        [2318]=true,[2319]=true,[4234]=true,[4304]=true,[8170]=true,[2934]=true,[4232]=true,[4235]=true,[8169]=true,[8171]=true,[4461]=true,[8150]=true,[8152]=true,[5637]=true,[4304]=true,[8154]=true,[8172]=true,[4236]=true,[15408]=true,[8368]=true,[15417]=true,[15419]=true,[15416]=true,[8165]=true,[15422]=true,[15415]=true,[15423]=true,[20501]=true,[20500]=true,[20498]=true,[15409]=true,[12810]=true,[783]=true,[15412]=true,[12607]=true,[4231]=true,[7428]=true,[8167]=true,[4233]=true,[6470]=true,[6471]=true,
+        [2318]=true,[2319]=true,[4234]=true,[4304]=true,[8170]=true,[2934]=true,[4232]=true,[4235]=true,[8169]=true,[8171]=true,[4461]=true,[8150]=true,[8152]=true,[5637]=true,[4304]=true,[8154]=true,[8172]=true,[4236]=true,[15408]=true,[8368]=true,[15417]=true,[15419]=true,[15416]=true,[8165]=true,[15422]=true,[15415]=true,[15423]=true,[20501]=true,[20500]=true,[20498]=true,[15409]=true,[12810]=true,[783]=true,[15412]=true,[12607]=true,[4231]=true,[7428]=true,[8167]=true,[4233]=true,[6470]=true,[6471]=true,[7072]=true,[5785]=true,
     },
     Mining = {
         [2770]=true,[2771]=true,[2772]=true,[2775]=true,[2776]=true,[3858]=true,[10620]=true,[11370]=true,[2840]=true,[2841]=true,[2842]=true,[2843]=true,[3575]=true,[3860]=true,[12359]=true,[11371]=true,[774]=true,[818]=true,[1210]=true,[1705]=true,[7909]=true,[12361]=true,[12364]=true,[3857]=true,[3577]=true,[3864]=true,[7911]=true,[7910]=true,[12799]=true,[3859]=true,[6037]=true,[1529]=true,[1206]=true,[11370]=true,[9262]=true,[11754]=true,[12800]=true,[12363]=true,[3576]=true,[11184]=true,[11185]=true,[11186]=true,[11188]=true,
@@ -41,11 +38,8 @@ local ItemLists = {
     Enchanting = {
         [16202]=true,[16204]=true,[16207]=true,[11137]=true,[11135]=true,[11139]=true,[11138]=true,[14343]=true,[16203]=true,[14344]=true,[11176]=true,[15994]=true,[10998]=true,[11082]=true,[10940]=true,[10978]=true,[10939]=true,[10938]=true,[11134]=true,[11174]=true,[11177]=true,[11083]=true,[11175]=true,[11178]=true,[20725]=true,[11084]=true,
     },
-    -- Cooking = {
-    --     [2677]=true,[4604]=true,[5470]=true,[5465]=true,[2765]=true,[3173]=true,[3712]=true,[2678]=true,[3685]=true,[12184]=true,[7974]=true,[12206]=true,[12037]=true,[12203]=true,[12037]=true,[4603]=true,[6361]=true,[4594]=true,[8364]=true,[6308]=true,[8365]=true,[21071]=true,[6289]=true,[13759]=true,[13760]=true,[13757]=true,[6359]=true,[12037]=true,[20424]=true,[5469]=true,[6370]=true,[6358]=true,[6291]=true,[12207]=true,
-    -- },
     Cooking = {
-        [13759]=true,[13760]=true,[13757]=true,[8365]=true,[6358]=true,[13758]=true,[6289]=true,[6308]=true,[6291]=true,[6303]=true,
+        [13759]=true,[13760]=true,[13757]=true,[8365]=true,[6358]=true,[13758]=true,[6289]=true,[6308]=true,[6291]=true,[6303]=true,[7974]=true,[3712]=true,[6359]=true,
     },
     Tailoring = {
         [4306]=true,[4338]=true,[14048]=true,[2997]=true,[2592]=true,[4340]=true,[4339]=true,[14047]=true,[5500]=true,[13926]=true,[4305]=true,[5498]=true,[2589]=true,[4337]=true,[14227]=true,[10285]=true,[14227]=true,[4337]=true,[10285]=true,[2996]=true,[7971]=true,[3182]=true,
@@ -54,9 +48,9 @@ local ItemLists = {
         [4371]=true,[4361]=true,[4359]=true,[4375]=true,[4382]=true,[4357]=true,[10558]=true,[4363]=true,[4364]=true,[4387]=true,[4389]=true,[10559]=true,[10505]=true,[4404]=true,[4377]=true,[10561]=true,[10560]=true,[15994]=true,[15992]=true,
     },
     AH = {
-        [12208]=true,[8146]=true,[12205]=true,[7972]=true,[15420]=true,[19235]=true,[12202]=true,[13446]=true,[17682]=true,[19441]=true,[11407]=true,
+        [12208]=true,[8146]=true,[12205]=true,[7972]=true,[15420]=true,[19235]=true,[12202]=true,[13446]=true,[17682]=true,[19441]=true,[11407]=true,[3731]=true,[12184]=true,[3685]=true,[8151]=true,[3928]=true,[4096]=true,[8173]=true,[9719]=true,[3827]=true,[13443]=true,[9260]=true,[1725]=true,[15564]=true,[4265]=true,[4402]=true,
     },
-    Greens = {},
+    AH_extra = {},
     Maxprof = {},
 }
 
@@ -81,6 +75,8 @@ local lastBounceTime = 0
 -- =========================
 local ProfessionKeywords = {
     "blacksmithing",
+    -- "weaponsmith",
+    -- "armorsmith",
     "tailoring",
     "alchemy",
     "herbalism",
@@ -88,6 +84,8 @@ local ProfessionKeywords = {
     "skinning",
     "leatherworking",
     "engineering",
+    -- "goblin engineer",
+    -- "gnomish engineer",
     "enchanting",
     "cooking",
     "first aid",
@@ -115,6 +113,20 @@ local function msg(text)
 end
 
 -- =========================
+-- Clear queue
+-- =========================
+local function ClearQueue()
+    queue = {}
+    sending = false
+    waitingForAttach = false
+    currentItem = nil
+    currentCategory = nil
+    currentTarget = nil
+    sendAllQueue = {}
+    msg("Queue cleared. All pending sends canceled.")
+end
+
+-- =========================
 -- Scan a category for items
 -- =========================
 local function ScanCategory(category)
@@ -135,11 +147,11 @@ local function ScanCategory(category)
                 local itemID = GetItemIDFromLink(link)
 
                 -- Special handling for Greens category
-                if category == "Greens" then
+                if category == "AH_extra" then
                     GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
                     GameTooltip:SetBagItem(b, s)
 
-                    local isBoE, isGreen, isKnown = false, false, false
+                    local isBoE, isDisenchantable, isKnown = false, false, false
                     for i = 1, GameTooltip:NumLines() do
                         local left = getglobal("GameTooltipTextLeft"..i)
                         if left then
@@ -149,31 +161,20 @@ local function ScanCategory(category)
                                 if string.find(text, "Binds when equipped") then
                                     isBoE = true
                                 end
-                                if string.find(text, "|cff1eff00") then -- green rarity
-                                    isGreen = true
+                                if string.find(text, "Disenchants into") then
+                                    isDisenchantable = true
                                 end
                                 if string.find(string.lower(text), "already known") then
                                     isKnown = true
                                 end
-
-                                -- if text:find("Binds when equipped") then
-                                --     isBoE = true
-                                -- end
-                                -- if text:find("|cff1eff00") then
-                                --     isGreen = true
-                                -- end
-                                -- if text:lower():find("already known") then
-                                --     isKnown = true
-                                -- end
-
                             end
                         end
                     end
                     GameTooltip:Hide()
 
-                    if (isBoE and isGreen) or isKnown then
+                    if (isBoE and isDisenchantable) or isKnown then
                         table.insert(queue, {bag=b, slot=s, link=link})
-                        msg("Queued Greens: "..link.." (ID="..(itemID or "nil")..")")
+                        msg("Queued AH_extra: "..link.." (ID="..(itemID or "nil")..")")
                     end
 
                 elseif category == "Maxprof" then
@@ -203,19 +204,6 @@ local function ScanCategory(category)
                                         end
                                     end
                                 end
-
-                                -- local lower = text:lower()
-                                -- if lower:find("teaches you") then
-                                --     teachesYou = true
-                                -- end
-                                -- if lower:find("requires") then
-                                --     for _, prof in ipairs(ProfessionKeywords) do
-                                --         if lower:find(prof) then
-                                --             requiresProfession = true
-                                --             break
-                                --         end
-                                --     end
-                                -- end
 
                             end
                         end
@@ -337,7 +325,7 @@ end
 -- =========================
 -- Slash commands per category
 -- =========================
-local categories = {"Bank","Leather","Mining","Stone","Herbs","Enchanting","Cooking","Tailoring","Engineering","Greens","Maxprof","AH"}
+local categories = {"Bank","Leather","Mining","Stone","Herbs","Enchanting","Cooking","Tailoring","Engineering","Maxprof","AH","AH_extra"}
 
 for _,cat in ipairs(categories) do
     local cmdName = "SEND"..cat
@@ -429,14 +417,7 @@ sendAllButton:SetText("Send All")
 sendAllButton:SetPoint("TOPLEFT", bounceButton, "TOPRIGHT", 4, 0)
 sendAllButton:SetScript("OnClick", function()
 
-    queue = {}
-    sending = false
-    waitingForAttach = false
-    currentItem = nil
-    currentCategory = nil
-    currentTarget = nil
-    sendAllQueue = {}
-    msg("Queue cleared. All pending sends canceled.")
+    ClearQueue()
 
     if not MailFrame:IsShown() then return end
     sendAllQueue = {unpack(categories)}
